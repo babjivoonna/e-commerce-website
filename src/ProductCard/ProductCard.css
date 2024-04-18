@@ -1,0 +1,28 @@
+.category {
+    font-size: 10px;
+    color: gray;
+}
+
+.title {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.add-btn {
+    height: 20px;
+    padding: 0;
+    font-size: 11px;
+}
+
+.img-container {
+    display: flex;
+    min-width: 100px;
+    justify-content: center;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px;
+}

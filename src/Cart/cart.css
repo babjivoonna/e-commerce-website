@@ -1,0 +1,49 @@
+.cart {
+    position: relative;
+    height: auto;
+    z-index: 1;
+}
+.cart>img{
+    position: absolute;
+    top: 3rem;
+    height: 25rem;
+    right: -5rem;
+    background-color: white;
+
+
+}
+.cart section{
+    
+    width: 33rem;
+    position: absolute;
+    top: 4rem;
+    right: -3rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;    padding: 1rem;
+    background-color: white;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    border-radius: 1rem;
+    
+}
+.cart section img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+.cart section article{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cart section h1{
+    align-self: flex-end;
+    margin-right: 2rem;
+}
+
+.cart section h1 span{
+background-color: red;
+color: white;
+padding: .5rem .7rem;
+}
