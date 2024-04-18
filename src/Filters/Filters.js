@@ -79,16 +79,7 @@ export const Filters = ({products,setProducts}) => {
                     
                 </AccordionDetails>
             </Accordion>
-            <div className="accordion">
-                <div  className="open" onClick={()=>setShowInput((prev)=>!prev)}><div>Accordion</div> {showInput?<div>✓</div>:<div>❌</div>}</div>
-               
-               {showInput&&<div>
-               <p> <input type="radio" /> low to max</p> 
-                <p>   <input type="radio" /> max to low</p>
-                </div>}
-                
-
-            </div>
+            
 
         </div>
     );
