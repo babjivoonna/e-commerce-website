@@ -8,6 +8,9 @@ export const App = () => {
   const [products, setProducts] = useState([]);
   const [duplicate,setDuplicate]=useState([]);
   const [cartProducts, setCartProducts] = useState([]);
+  const [searchQuery,setSearchQuery]=useState("")
+  const [categeories,setCategeories]=useState([])
+  const [searchCategories,setSearchCategeories]=useState([])
 
   useEffect(() => {
     getProducts();
@@ -18,6 +21,8 @@ export const App = () => {
     const data = await response.json();
     setDuplicate(data)
     setProducts(data);
+    const allcategory = data.map((e) => e.category)
+    setCategeories([...new Set(allcategory)])
   }
 
   const addToCart = (product) => {
@@ -35,11 +40,31 @@ export const App = () => {
     }
 
   }
+  useEffect(()=>{
+    const filterPro=categeories.filter((ele)=>ele.includes(searchQuery.toLowerCase()))
+    console.log({filterPro})
+    setSearchCategeories(filterPro)
+  },[searchQuery])
+  console.log(categeories)
+  const searchAdd=()=>{
+  if(searchQuery===""){
+    setDuplicate(products)
+  }
+  else{
+    const filterPro=duplicate.filter((ele)=>searchCategories.includes(ele.category))
+    if(filterPro.length>0){
+      setDuplicate(filterPro)
+    }
+    else{
+    setDuplicate(products)
+    }
+  }
+  }
 
   return (
     <div className="main">
       <div className="header">
-        <Header cartProducts={cartProducts} />
+        <Header searchAdd={searchAdd} setSearchQuery={setSearchQuery} cartProducts={cartProducts} />
       </div>
       <div className="content">
         <div className="filters">
